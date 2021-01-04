@@ -15,6 +15,10 @@ Defining features of the code:
 - serial output for easy debugging
 - adjustable parameters
 
+Application in network cabinet:
+![Application in network cabinet](https://github.com/mariuste/Fan_Temp_Control/blob/main/image/Application_Image.jpeg)
+
+
 ## Acknowledgment
 These two projects were used for inspiration and code snippets, especially the pwm timer part:
 - for basic structure: https://create.arduino.cc/projecthub/KaptenJansson/pwn-fan-controller-with-temp-sensing-and-button-override-4f2e8d/embed
