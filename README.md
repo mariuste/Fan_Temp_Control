@@ -2,8 +2,8 @@
 
 ## Intro
 This code was written to control the temperature inside a server cabinet by measuring the temperature
-with an DS18b20 Temperature probe and outputting a PWM signal with the arduino nano to control a 4-Pin fan.
-Unlike the cheap control boards from amazon or ebay this code switches the fan off when the temperature
+with a DS18b20 Temperature probe and outputting a PWM signal with the Arduino Nano to control a 4-Pin fan.
+Unlike the cheap control boards from Amazon or Ebay this code switches the fan off when the temperature
 is low enough.
 
 ## Overview:
