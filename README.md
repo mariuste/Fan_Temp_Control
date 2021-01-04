@@ -14,6 +14,8 @@ Defining features of the code:
 - simple code which can be easily altered or extended
 - serial output for easy debugging
 - adjustable parameters
+- temperature regulation between minimum an maximum temperature (to minimize noise)
+- shuts off fan at low temperatures (motivation for this project because the server network cabinat is located in a bedroom)
 
 ## Acknowledgment
 These two projects were used for inspiration and code snippets, especially the pwm timer part:
