@@ -7,7 +7,7 @@ Unlike the cheap control boards from Amazon or Ebay this code switches the fan o
 is low enough.
 
 ## Overview:
-...
+![Wireing Diagram](https://github.com/mariuste/Fan_Temp_Control/blob/main/image/WiringDiagram_bb.png)
 
 ## Features
 Defining features of the code:
