@@ -1,4 +1,4 @@
-# Temperature Controlled 4-Pin Fan /w Arduino Nano
+# Temperature Controlled 4-Pin Fan with Arduino Nano
 
 ## Intro
 This code was written to control the temperature inside a server cabinet by measuring the temperature
