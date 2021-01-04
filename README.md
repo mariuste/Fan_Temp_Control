@@ -1,4 +1,4 @@
-# Temperature Controlled 4-Pin Fan /w Arduino Nano
+# Temperature Controlled 4-Pin PWM-Fan with Arduino Nano
 
 ## Intro
 This code was written to control the temperature inside a server cabinet by measuring the temperature
@@ -14,6 +14,8 @@ Defining features of the code:
 - simple code which can be easily altered or extended
 - serial output for easy debugging
 - adjustable parameters
+- temperature regulation between minimum an maximum temperature (to minimize noise)
+- shuts off fan at low temperatures (motivation for this project because the server network cabinat is located in a bedroom)
 
 Application in network cabinet:
 ![Application in network cabinet](https://github.com/mariuste/Fan_Temp_Control/blob/main/image/Application_Image.jpeg)
@@ -21,5 +23,5 @@ Application in network cabinet:
 
 ## Acknowledgment
 These two projects were used for inspiration and code snippets, especially the pwm timer part:
-- for basic structure: https://create.arduino.cc/projecthub/KaptenJansson/pwn-fan-controller-with-temp-sensing-and-button-override-4f2e8d/embed
-- for PWM timers: https://fdossena.com/?p=ArduinoFanControl/i.md
+- for basic structure: "pwm_fan" by KaptenJansson https://create.arduino.cc/projecthub/KaptenJansson/pwn-fan-controller-with-temp-sensing-and-button-override-4f2e8d/embed
+- for PWM timers: "How To Properly Control PWM Fans With Arduino". by Federico Dossena https://fdossena.com/?p=ArduinoFanControl/i.md
