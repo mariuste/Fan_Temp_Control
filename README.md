@@ -17,5 +17,5 @@ Defining features of the code:
 
 ## Acknowledgment
 These two projects were used for inspiration and code snippets, especially the pwm timer part:
-- for basic structure: https://create.arduino.cc/projecthub/KaptenJansson/pwn-fan-controller-with-temp-sensing-and-button-override-4f2e8d/embed
-- for PWM timers: https://fdossena.com/?p=ArduinoFanControl/i.md
+- for basic structure: "pwm_fan" by KaptenJansson https://create.arduino.cc/projecthub/KaptenJansson/pwn-fan-controller-with-temp-sensing-and-button-override-4f2e8d/embed
+- for PWM timers: "How To Properly Control PWM Fans With Arduino". by Federico Dossena https://fdossena.com/?p=ArduinoFanControl/i.md
