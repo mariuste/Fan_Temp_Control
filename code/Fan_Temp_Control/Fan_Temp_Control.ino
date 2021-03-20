@@ -97,7 +97,7 @@ void setup() {
 
 	Serial.println("# Settings #");
 	Serial.println(" Below this temperature (minus half hysteresis) the fan");
-	Serial.println(" shuts off. It enabes again at this temperature plus half hysteresis:");
+	Serial.println(" shuts off. It enables again at this temperature plus half hysteresis:");
 	Serial.print("  tempLow: "); Serial.print(tempLow); Serial.println("°C");
 
 	
