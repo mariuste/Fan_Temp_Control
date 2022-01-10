@@ -6,6 +6,9 @@ with a DS18b20 Temperature probe and outputting a PWM signal with the Arduino Na
 Unlike the cheap control boards from Amazon or Ebay this code switches the fan off when the temperature
 is low enough.
 
+**Choice of fan:** Please note that the shut-off feature only works if the fan supports it (tuns off when PWM = 0%). Not all fans do this. I think most CPU-Fans do offer this feature while most case-fans have a minimum RPM even at 0% PWM. For fans without this feature the circuit has to be modifies if you want to shut if off at low temperatures. A simple high side switch will work (1 PMOS + 1 NMOS or 1 PNP+NPN Transistor).
+//TODO: I will soon extend the code to support another GPIO to shut off fans wich do not support 0% PWM
+
 ## Overview:
 ![Wireing Diagram](https://github.com/mariuste/Fan_Temp_Control/blob/main/image/WiringDiagram_bb.png)
 
@@ -15,7 +18,7 @@ Defining features of the code:
 - serial output for easy debugging
 - adjustable parameters
 - temperature regulation between minimum an maximum temperature (to minimize noise)
-- shuts off fan at low temperatures (motivation for this project because the server network cabinat is located in a bedroom)
+- shuts off fan at low temperatures (motivation for this project because the server network cabinat is located in a bedroom); only works if the fan supports 0% PWM mode
 
 Application in network cabinet:
 ![Application in network cabinet](https://github.com/mariuste/Fan_Temp_Control/blob/main/image/Application_Image.jpeg)
