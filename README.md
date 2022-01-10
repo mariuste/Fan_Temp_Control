@@ -4,14 +4,16 @@
 This code was written to control the temperature inside a server cabinet by measuring the temperature
 with a DS18b20 Temperature probe and outputting a PWM signal with the Arduino Nano to control a 4-Pin fan.
 Unlike the cheap control boards from Amazon or Ebay this code switches the fan off when the temperature
-is low enough.
+is low enough (0% PWM and optional High-Side-Switch).
 
-**Choice of fan:** Please note that the shut-off feature only works if the fan supports it (tuns off when PWM = 0%). Not all fans do this. I think most CPU-Fans do offer this feature while most case-fans have a minimum RPM even at 0% PWM. For fans without this feature the circuit has to be modifies if you want to shut if off at low temperatures. A simple high side switch will work (1 PMOS + 1 NMOS or 1 PNP+NPN Transistor).
-You can test if your fan will shut of at 0% PWM by connecting the the fan to 12V and GND an connecting the PWM pin of the fan to GND. If it stops spinning everything is fine and the code arduino will work as intended. But when it spins you need the mentioned high side switch for turning it off completely at low temperature.
+**Choice of fan:** Please note that the shut-off feature only works if the fan supports it (tuns off when PWM = 0%). Not all fans do this.
+According to the 4-Pin Fan specification by Intel 0%-Shutoff is supported on "Type B" and "Type C" 4-Pin Fans, not on "Type A" fans.
+
+I think most CPU-Fans do offer 0%-Shutoff while most case-fans have a minimum RPM even at 0% PWM. For fans without this feature the circuit has to be modified if you want to shut if off at low temperatures. A simple high side switch will work (1 PMOS + 1 NMOS or 1 PNP+NPN Transistor).
+
+You can test if your fan will shut off at 0% PWM by connecting the the fan to 12V and GND and connecting the PWM pin of the fan to GND. If it stops spinning everything is fine and the code arduino will work as intended (fan is Type B or Type C). But when it spins you need the mentioned high side switch for turning it off completely at low temperature (Type A fan).
 
 If you don't mind the fan always slowly spinning at low temperatures every fan will work.
-
-//TODO: I will soon extend the code to support another GPIO to shut off fans which do not support 0% PWM
 
 ## Overview:
 ![Wireing Diagram](https://github.com/mariuste/Fan_Temp_Control/blob/main/image/WiringDiagram_bb.png)
