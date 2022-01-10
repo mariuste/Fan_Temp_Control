@@ -40,6 +40,9 @@ DallasTemperature sensors(&oneWire);
 // PWM output pin
 const byte OC1B_PIN = 10;
 
+// Digital pin for controlliing optional high side switch
+const byte HS_SWITCH = 9;
+
 // how frequently the main loop runs
 const int tempSetInterval = 5000;
 
@@ -67,7 +70,11 @@ void setup() {
 	//enable output for Timer 1
 	pinMode(OC1B_PIN,OUTPUT);
 	setupTimer1();
-
+	
+	// configure High-Side Switch
+	pinMode(HS_SWITCH,OUTPUT);
+	digitalWrite(HS_SWITCH, HIGH); // default: Fan on
+	
 
 	// start serial port 
 	Serial.begin(9600); 
@@ -93,6 +100,11 @@ void setup() {
 	Serial.println(" 4-Pin Fan (GND, VCC, Sense, Control)");
 	Serial.print(  "   Arduino: GND, 12V, n/C  , D");
 	Serial.println(OC1B_PIN);
+	Serial.println();
+	
+	Serial.println(" Optional High-Side Switch");
+	Serial.print(  "   Arduino: D");
+	Serial.println(HS_SWITCH);
 	Serial.println();
 
 	Serial.println("# Settings #");
@@ -155,8 +167,12 @@ void loop() {
 void setPwmDuty() {
 	if (duty == 0) {
 		fanState = LOW;
+		// Disable high side switch
+		digitalWrite(HS_SWITCH, LOW);
 	} else if (duty > 0) {
 		fanState = HIGH;
+		// Enable high side switch
+		digitalWrite(HS_SWITCH, HIGH);
 	}
 
 	setFan(duty);
